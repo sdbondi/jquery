@@ -445,7 +445,8 @@ jQuery.event = {
 				// 2) have namespace(s) a subset or equal to those in the bound event (both can have no namespace).
 				if ( run_all || (!event.namespace && !handleObj.namespace) || event.namespace_re && event.namespace_re.test( handleObj.namespace ) ) {
 
-					event.data = handleObj.data;
+          if (handleObj.data)
+					  event.data = handleObj.data;
 					event.handleObj = handleObj;
 
 					ret = ( (jQuery.event.special[ handleObj.origType ] || {}).handle || handleObj.handler )
