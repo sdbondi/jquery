@@ -447,6 +447,9 @@ jQuery.event = {
 
           if (handleObj.data)
 					  event.data = handleObj.data;
+          if (!event.data)
+            event.data = null;
+
 					event.handleObj = handleObj;
 
 					ret = ( (jQuery.event.special[ handleObj.origType ] || {}).handle || handleObj.handler )
